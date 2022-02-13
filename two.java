@@ -1,20 +1,29 @@
 import java.util.Scanner;
-public class TB {
-    public static void main(String[] args) {
-        // double tb = 3.005;
-        // // double tb = 1.5;
-        // // double tb = 3.005;
-        // int money = 0;
-        // double mod = tb%1000.0;
-        System.out.println(5.5%0.10);
-        // if(tb < 1) {
-        //     money += 500; 
-        // }
-        // if(tb > 1 && tb < 2) {
-            
-        // }
 
+public class two {
+    public static void main(String[] args){
+        System.out.println("Hello World");
+
+        double input = 3.005;
+        double mod ;
+        double money = 0;
+        mod = 3.005 * 1000;
+        double m = mod % 1000;
+        System.out.println(m);
+        int x = (int)mod;
+        System.out.println(x);
+
+        if(x < 1000 || x > 1000){
+            money += 500;
+            x -= 1000;
+        }
+        if(x < 1000 || x > 1000){
+            if(x%1000==0) money += m * 1;
+            
+        }
         
+
+
 
     }
 }
