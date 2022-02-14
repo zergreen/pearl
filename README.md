@@ -7,9 +7,9 @@ Date : 13/2/2022 </p>
 
 ![codeing](https://i.imgur.com/MvMxQ1a.gif)
 
-![alt meme](src/meme.jpg "meme will show")
+<!-- ![alt meme](src/meme.jpg "meme will show") -->
 
-![](src/r1_p1_run.jpg);
+<!-- ![](src/r1_p1_run.jpg); -->
 
 test ting!
 
