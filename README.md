@@ -7,6 +7,8 @@ Date : 13/2/2022 </p>
 
 ![codeing](https://i.imgur.com/MvMxQ1a.gif)
 
+![alt gummy_problem](../src/r1_p1_run.png "bug1")
+
 test ting!
 
 hooray!
