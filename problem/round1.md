@@ -5,4 +5,4 @@
 
 <span class="caption">The [gummy problem] first bug of round 1.</span>
 
-  nice try!
+    nice try!
