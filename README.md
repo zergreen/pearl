@@ -1,4 +1,4 @@
-# pearl/branch green
+# pearl
 
 <p> Team : ปลาดาวไม่ใช่ปลา <br>
 CodeArcade : year2 / term2 <br>
