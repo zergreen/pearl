@@ -1,15 +1,5 @@
-# pearl
-<<<<<<< HEAD
-<<<<<<< HEAD
+# pearl/branch green
 
-Branch for sa
-=======
-Team : ปลาดาวไม่ใช่ปลา
-CodeArcade : year2 / term2
-
-โปรเจคนี้เป็นการสำรองไฟล์ลงกิตฮับ
->>>>>>> master
-=======
 <p> Team : ปลาดาวไม่ใช่ปลา <br>
 CodeArcade : year2 / term2 <br>
 Date : 13/2/2022 </p>
