@@ -1,5 +1,9 @@
 # pearl
 
+<p> Team : ปลาดาวไม่ใช่ปลา <br>
+CodeArcade : year2 / term2 <br>
+Date : 13/2/2022 </p>
+
 # Installed
     cd 
     git clone ttps://github.com/zergreen/pearl.git
