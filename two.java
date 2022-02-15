@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class TB {
+class TB {
     public static void main(String[] args) {
         // double tb = 3.005;
         // // double tb = 1.5;
