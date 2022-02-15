@@ -2,7 +2,9 @@
 
 <p> Team : ปลาดาวไม่ใช่ปลา <br>
 CodeArcade : year2 / term2 <br>
-Date : 13/2/2022 </p>
+DateStart : 13/2/2022 <br>
+DateUpdated : 15/2/2022 <br>
+Score : 30 </p>
 
 # Installed
     cd 
@@ -16,3 +18,5 @@ Date : 13/2/2022 </p>
 
 <!-- ![](src/r1_p1_run.jpg); -->
 
+# Round1
+<p> รอบที่ 1 เหลือข้อที่ 3 ที่ยังไม่ได้ <p>
