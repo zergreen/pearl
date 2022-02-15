@@ -16,7 +16,7 @@ public class r1_1 {
         String text = "\ntsuki atte kudasai!";
         // int x = 10, y = 15; // if you Lazy input use this
         int x_sh = 0, y_ln = 0;
-        int sum = 0;
+        long sum = 0;
         int ch_x = 0, ch_y = 0;
 
         int gcd = GCD(x,y);
@@ -39,7 +39,7 @@ public class r1_1 {
 
         // System.out.println(text);
 
-        System.out.printf("%d %d %d %s", ch_x, ch_y, sum, text);
+        System.out.printf("%d %d %d%s", ch_x, ch_y, sum, text);
     }
 
     static int GCD(int x, int y)
