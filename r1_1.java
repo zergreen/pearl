@@ -31,7 +31,7 @@ public class r1_1 {
         ch_x = y_ln;
         ch_y = x_sh;
 
-        sum = gcd * x_sh * y_ln;
+        sum = (long)gcd * (long)x_sh * (long)y_ln;
 
         // System.out.println("Short : " + ch_x);
         // System.out.println("Long : " + ch_y);
