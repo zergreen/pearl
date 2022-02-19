@@ -4,7 +4,8 @@
 CodeArcade : year2 / term2 <br>
 DateStart : 13/2/2022 <br>
 DateUpdated : 15/2/2022 <br>
-Score : 30 </p>
+Score : 40 <br>
+Failed : 9 </p>
 
 # Installed
     cd 
@@ -12,7 +13,9 @@ Score : 30 </p>
 
 
 # Round1
-<p> รอบที่ 1 เหลือข้อที่ 3 ที่ยังไม่ได้ <p>
+<p> ROUND 1 COMPLETE <br>
+SCORE : 40 <br>
+Failed : 9 <p>
 
 [โปรเจคนี้เป็นการสำรองไฟล์ใน code arcade ลงกิตฮับ]
 
