@@ -13,7 +13,7 @@ Failed : 9 </p>
 
 
 # Round
-<p> ROUND 1 COMPLETE <br>
+<p> *ROUND 1 COMPLETE* <br>
 <p> Current ROUND 2 <br>
 SCORE : 65 <br>
 Failed : 9 <p>
