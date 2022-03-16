@@ -1,10 +1,11 @@
+import java.lang.reflect.Array;
 import java.security.spec.ECPrivateKeySpec;
 import java.time.Year;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.*;
 
-public class q2 {
+public class q2v1 {
     public static void main(String[] args) {
 
         // String data[] = new String[10];
@@ -21,28 +22,30 @@ public class q2 {
                 "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
         };
 
+        // String data[] = {
+        //         " 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 ",
+        //         " 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 ",
+        //         " 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 ",
+        //         " 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 ",
+        //         " 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 ",
+        //         " 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 ",
+        //         " 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 ",
+        //         " 0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 0 ",
+        //         " 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0 ",
+        //         " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ",
+        // };
+
         int line[][] = new int[10][20];
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 20; j++) {
-                int rand = (int) (Math.random() * 2) + 0;
-                // int r = (int) (Math.random() * 2) + 0;
-                // println(r);
-                line[i][j] = rand;
+
+        for(int i=0; i<10; i++){
+            for(int j=0; j < 20; j++){
+                String cp = data[i];
+                cp = cp.replaceAll("\\s", "");
+                int num = Character.getNumericValue(cp.charAt(j));
+                // println(num);
+                line[i][j] = num;
             }
         }
-
-        // x --> 0 1 2 3 ...
-        // y
-        // |
-        // |
-        // 0
-        // 1
-        // 2
-        // 3
-        // .
-        // .
-
-        // println(data[0]);
 
         printArr(line);
         println("PAUSE");
@@ -58,10 +61,18 @@ public class q2 {
          * color : color you like to fill
          */
 
-        obj.bfs(10, 20, line, 5, 5, 2);
+        for(int j=0;j<20;j++){ //begin line[0][j] ; j=20(column)
+            if(line[0][j] == 1){
+                obj.bfs(10, 20, line, 0, j, 9);
+            }
+        }
 
-        println("After insert color");
-        printArr(line);
+        // obj.bfs(10, 20, line, 0, 10, 9);
+
+        // println("After insert color");
+        // printArr(line);
+
+        output();
 
         System.exit(0);
 
@@ -77,9 +88,18 @@ public class q2 {
          * W
          * SW
          * S
-         * ST
+         * SE
          ***/
 
+    }
+
+    public static void output(){
+        int posX=0, posY=0;
+        while(true){
+            // println("x"+"y");
+            System.out.printf("%d %d", posX, posY);
+            break;
+        }
     }
 
     public static void printArr(int[][] arr) {
@@ -135,11 +155,11 @@ class BFS {
     public static void bfs(int n, int m, int data[][], int x, int y, int color) {
 
         // Visiting array
-        int vis[][] = new int[101][101];
+        int vis[][] = new int[10][20];
 
         // Initialing all as zero
-        for (int i = 0; i < 101; i++) {
-            for (int j = 0; j < 101; j++) {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 20; j++) {
                 vis[i][j] = 0;
             }
         }
@@ -166,8 +186,6 @@ class BFS {
 
             // Popping front pair of queue
             obj.remove(); // เอาหัวคิวออกไป
-
-            // For Upside Pixel or Cell
 
             /***
              * validCoord(x1 + 1, y1, n, m) == 1
@@ -200,31 +218,76 @@ class BFS {
              * ทำมาคพิกัดว่ามาแล้วนะ
              */
 
+            // N : North
             if ((validCoord(x1 + 1, y1, n, m) == 1) && vis[x1 + 1][y1] == 0 && data[x1 + 1][y1] == preColor) {
                 Pair p = new Pair(x1 + 1, y1);
                 obj.add(p);
                 vis[x1 + 1][y1] = 1;
             }
 
-            // For Downside Pixel or Cell
+            // S : South
             if ((validCoord(x1 - 1, y1, n, m) == 1) && vis[x1 - 1][y1] == 0 && data[x1 - 1][y1] == preColor) {
                 Pair p = new Pair(x1 - 1, y1);
                 obj.add(p);
                 vis[x1 - 1][y1] = 1;
             }
 
-            // For Right side Pixel or Cell
+            // E : East
             if ((validCoord(x1, y1 + 1, n, m) == 1) && vis[x1][y1 + 1] == 0 && data[x1][y1 + 1] == preColor) {
                 Pair p = new Pair(x1, y1 + 1);
                 obj.add(p);
                 vis[x1][y1 + 1] = 1;
             }
 
-            // For Left side Pixel or Cell
+            // E : East + 1
+            if ((validCoord(x1, y1 + 2, n, m) == 1) && vis[x1][y1 + 2] == 0 && data[x1][y1 + 2] == preColor) {
+                Pair p = new Pair(x1, y1 + 2);
+                obj.add(p);
+                vis[x1][y1 + 2] = 1;
+            }
+
+            // W : West
             if ((validCoord(x1, y1 - 1, n, m) == 1) && vis[x1][y1 - 1] == 0 && data[x1][y1 - 1] == preColor) {
                 Pair p = new Pair(x1, y1 - 1);
                 obj.add(p);
                 vis[x1][y1 - 1] = 1;
+            }
+
+            // W : West + 1
+            if ((validCoord(x1, y1 - 2, n, m) == 1) && vis[x1][y1 - 2] == 0 && data[x1][y1 - 2] == preColor) {
+                Pair p = new Pair(x1, y1 - 2);
+                obj.add(p);
+                vis[x1][y1 - 2] = 1;
+            }
+
+            // SW : South West
+            if ((validCoord(x1 + 1, y1 - 1, n, m) == 1) && vis[x1 + 1][y1 - 1] == 0 && data[x1 + 1][y1 - 1] == preColor) {
+                // System.out.println("I reach SW");
+                Pair p = new Pair(x1 + 1, y1 - 1);
+                obj.add(p);
+                vis[x1 + 1][y1 - 1] = 1;
+            }
+            
+            // NW : North West
+            if ((validCoord(x1 - 1, y1 - 1, n, m) == 1) && vis[x1 - 1][y1 - 1] == 0 && data[x1 - 1][y1 - 1] == preColor) {
+                Pair p = new Pair(x1 - 1, y1 - 1);
+                obj.add(p);
+                vis[x1 - 1][y1 - 1] = 1;
+            }
+
+            // NE : North East
+            if ((validCoord(x1 - 1, y1 + 1, n, m) == 1) && vis[x1 - 1][y1 + 1] == 0 && data[x1 - 1][y1 + 1] == preColor) {
+                Pair p = new Pair(x1 - 1, y1 + 1);
+                obj.add(p);
+                vis[x1 - 1][y1 + 1] = 1;
+            }
+
+            // SE : South East
+            if ((validCoord(x1 + 1, y1 + 1, n, m) == 1) && vis[x1 + 1][y1 + 1] == 0 && data[x1 + 1][y1 + 1] == preColor) {
+                // System.out.println("I reach SE");
+                Pair p = new Pair(x1 + 1, y1 + 1);
+                obj.add(p);
+                vis[x1 + 1][y1 + 1] = 1;
             }
         }
 
@@ -236,5 +299,29 @@ class BFS {
             System.out.println();
         }
         System.out.println();
+
+        System.out.println("VISITED[101][101]");
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 20; j++) {
+                System.out.print(vis[i][j] + "");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        System.out.println("output");
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 20; j++) {
+                if(vis[i][j] == 0 && data[i][j] == 1){
+                    System.out.printf("%d %d \n",i,j);
+                }
+            }
+            // System.out.println();
+        }
+        System.out.println();
+
+        
+
+        System.out.println("I am finished");
     }
 }

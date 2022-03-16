@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.security.spec.ECPrivateKeySpec;
 import java.time.Year;
 import java.util.Arrays;
@@ -30,6 +31,36 @@ public class q2 {
                 line[i][j] = rand;
             }
         }
+        int li[][] = new int[10][20];
+        String cp[] = new String[10];
+        cp[0] = data[0];
+        cp[0] = cp[0].replaceAll("\\s", ""); //cut white space
+        println(cp[0]);
+
+        int da[] = new int[10];
+
+        char[] ch = new char[(cp[0].length())];
+  
+        // Copy character by character into array
+        for (int i = 0; i < cp[0].length(); i++) { 
+            // ch[i] = cp[0].charAt(i);
+            // int chi = i/2;
+            
+            // if(i%2==0){
+            //     ch[chi] = cp[0].charAt(i);
+            //     println("i : " + chi + " ch[i] : " + ch[chi]);
+            // }
+            ch[i] = cp[0].charAt(i);
+
+            int temp = 0;
+            println("ch[i] : " + ch[i]);
+            temp = Character.getNumericValue(ch[i]); // core value
+            println("temp from ch[i] : " + temp);
+            // da[i]=temp;
+        }
+
+        println(Arrays.toString(ch));
+        // println("da[] : " + Arrays.toString(da));
 
         // x --> 0 1 2 3 ...
         // y
@@ -58,10 +89,10 @@ public class q2 {
          * color : color you like to fill
          */
 
-        obj.bfs(10, 20, line, 5, 5, 2);
+        obj.bfs(10, 20, line, 0, 0, 9);
 
-        println("After insert color");
-        printArr(line);
+        // println("After insert color");
+        // printArr(line);
 
         System.exit(0);
 
@@ -77,7 +108,7 @@ public class q2 {
          * W
          * SW
          * S
-         * ST
+         * SE
          ***/
 
     }
@@ -167,8 +198,6 @@ class BFS {
             // Popping front pair of queue
             obj.remove(); // เอาหัวคิวออกไป
 
-            // For Upside Pixel or Cell
-
             /***
              * validCoord(x1 + 1, y1, n, m) == 1
              * เป็นเมธอดเชคว่า จุดร่วมปัจจุบัน x,y มันเกินขนาด arr2D[n][m] ไหม และ
@@ -200,31 +229,60 @@ class BFS {
              * ทำมาคพิกัดว่ามาแล้วนะ
              */
 
+            // N : North
             if ((validCoord(x1 + 1, y1, n, m) == 1) && vis[x1 + 1][y1] == 0 && data[x1 + 1][y1] == preColor) {
                 Pair p = new Pair(x1 + 1, y1);
                 obj.add(p);
                 vis[x1 + 1][y1] = 1;
             }
 
-            // For Downside Pixel or Cell
+            // S : South
             if ((validCoord(x1 - 1, y1, n, m) == 1) && vis[x1 - 1][y1] == 0 && data[x1 - 1][y1] == preColor) {
                 Pair p = new Pair(x1 - 1, y1);
                 obj.add(p);
                 vis[x1 - 1][y1] = 1;
             }
 
-            // For Right side Pixel or Cell
+            // E : East
             if ((validCoord(x1, y1 + 1, n, m) == 1) && vis[x1][y1 + 1] == 0 && data[x1][y1 + 1] == preColor) {
                 Pair p = new Pair(x1, y1 + 1);
                 obj.add(p);
                 vis[x1][y1 + 1] = 1;
             }
 
-            // For Left side Pixel or Cell
+            // W : West
             if ((validCoord(x1, y1 - 1, n, m) == 1) && vis[x1][y1 - 1] == 0 && data[x1][y1 - 1] == preColor) {
                 Pair p = new Pair(x1, y1 - 1);
                 obj.add(p);
                 vis[x1][y1 - 1] = 1;
+            }
+
+            // SW : South West
+            if ((validCoord(x + 1, y1 - 1, n, m) == 1) && vis[x + 1][y1 - 1] == 0 && data[x + 1][y1 - 1] == preColor) {
+                Pair p = new Pair(x + 1, y1 - 1);
+                obj.add(p);
+                vis[x + 1][y1 - 1] = 1;
+            }
+            
+            // NW : North West
+            if ((validCoord(x1 - 1, y1 - 1, n, m) == 1) && vis[x1 - 1][y1 - 1] == 0 && data[x1 - 1][y1 - 1] == preColor) {
+                Pair p = new Pair(x1 - 1, y1 - 1);
+                obj.add(p);
+                vis[x1 - 1][y1 - 1] = 1;
+            }
+
+            // NE : North East
+            if ((validCoord(x1 - 1, y1 + 1, n, m) == 1) && vis[x1 - 1][y1 + 1] == 0 && data[x1 - 1][y1 + 1] == preColor) {
+                Pair p = new Pair(x1 - 1, y1 + 1);
+                obj.add(p);
+                vis[x1 - 1][y1 + 1] = 1;
+            }
+
+            // SE : South East
+            if ((validCoord(x1 + 1, y1 + 1, n, m) == 1) && vis[x1 + 1][y1 + 1] == 0 && data[x1 + 1][y1 + 1] == preColor) {
+                Pair p = new Pair(x1 + 1, y1 + 1);
+                obj.add(p);
+                vis[x1 + 1][y1 + 1] = 1;
             }
         }
 
