@@ -3,7 +3,7 @@
 <p> Team : ปลาดาวไม่ใช่ปลา <br>
 CodeArcade : year2 / term2 <br>
 DateStart : 13/2/2022 <br>
-DateUpdated : 19/2/2022 <br>
+DateUpdated : 16/3/2022 <br>
 Score : 40 <br>
 Failed : 9 </p>
 
@@ -12,9 +12,10 @@ Failed : 9 </p>
     git clone https://github.com/zergreen/pearl.git
 
 
-# Round1
-<p> ROUND 1 COMPLETE <br>
-SCORE : 40 <br>
+# Round
+<p> *ROUND 1 COMPLETE* <br>
+<p> Current ROUND 2 <br>
+SCORE : 65 <br>
 Failed : 9 <p>
 
 [โปรเจคนี้เป็นการสำรองไฟล์ใน code arcade ลงกิตฮับ]
