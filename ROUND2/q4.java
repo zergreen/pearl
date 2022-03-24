@@ -148,7 +148,7 @@ karatxt += "จุด";
 for (int i = 0; i < sizeDec; i++) {
 numString = decimal.substring(i, i + 1);
 if (numString.indexOf("0") <= 0) {
-karatxt += digit[Integr.parseInt(numString)];
+karatxt += digit[Integer.parseInt(numString)];
 }
 }
 if (Integer.parseInt(decimal) == 0){
@@ -157,4 +157,4 @@ karatxt+="";
 }
 System.out.println(karatxt);
 }
-}e
+}
